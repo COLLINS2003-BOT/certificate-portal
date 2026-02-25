@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate Validation Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: #f5f5f5;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background-color: #111;
+            color: white;
+            padding: 20px;
+        }
+
+        .logo {
+            color: #c40000;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            padding: 12px 0;
+            cursor: pointer;
+            color: #ddd;
+        }
+
+        .menu-item:hover {
+            color: white;
+        }
+
+        /* Main Content */
+        .main {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .certificate-details {
+            margin-top: 20px;
+        }
+
+        .certificate-details div {
+            margin-bottom: 10px;
+        }
+
+        /* Floating Chat Button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">ABRSM</div>
+        <div class="menu-item">Login</div>
+        <div class="menu-item">Register</div>
+        <div class="menu-item">Help</div>
+        <div class="menu-item">Select Language</div>
+        <div class="menu-item">Dashboard</div>
+        <div class="menu-item">Public Venue & Digital Exams</div>
+        <div class="menu-item">Private Visit</div>
+        <div class="menu-item">Submit Files</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="card">
+            <h2>Certificate validation</h2>
+            <p>This is a validation of a certificate issued by ABRSM.</p>
+
+            <h3>Certificate</h3>
+
+            <div class="certificate-details">
+                <div><strong>First name:</strong> JOY WANJIRU</div>
+                <div><strong>Last name:</strong> KAMAU</div>
+                <div><strong>Contact ID:</strong> 035VK711</div>
+                <div><strong>Exam type:</strong> Theory Exams</div>
+                <div><strong>Instrument:</strong> Music Theory</div>
+                <div><strong>Grade:</strong> 5</div>
+                <div><strong>Year:</strong> 2025</div>
+                <div><strong>Result:</strong> 73/75 Distinction</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Button -->
+    <div class="chat-button">💬</div>
+
+</body>
+</html>
