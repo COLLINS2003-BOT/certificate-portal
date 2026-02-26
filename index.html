@@ -18,7 +18,7 @@ body{
 .header{
     background:#111;
     color:white;
-    padding:18px 30px;
+    padding:18px 20px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -28,36 +28,18 @@ body{
     font-size:26px;
     font-weight:bold;
     color:#e10600;
+    letter-spacing:1px;
 }
 
-/* HAMBURGER */
 .menu-btn{
     font-size:22px;
     cursor:pointer;
     border:1px solid #777;
     padding:6px 10px;
     border-radius:6px;
-    display:block;
 }
 
-/* DESKTOP NAV (Hidden on Mobile) */
-.desktop-nav{
-    display:none;
-    gap:25px;
-    align-items:center;
-}
-
-.desktop-nav a{
-    text-decoration:none;
-    color:#ccc;
-    font-size:14px;
-}
-
-.desktop-nav a:hover{
-    color:white;
-}
-
-/* MOBILE SIDE MENU */
+/* SIDE MENU */
 .side-menu{
     position:fixed;
     top:0;
@@ -91,7 +73,7 @@ body{
 /* CONTENT */
 .content{
     background:#efefef;
-    padding:30px 20px;
+    padding:25px 18px;
     border-top-left-radius:20px;
     border-top-right-radius:20px;
 }
@@ -107,12 +89,17 @@ body{
     color:#666;
 }
 
-/* CERTIFICATE */
+/* CERTIFICATE CARD */
 .certificate{
     background:white;
-    padding:25px;
+    padding:20px;
     margin-top:20px;
     border-radius:15px;
+}
+
+.certificate h2{
+    font-weight:normal;
+    color:#444;
 }
 
 .details{
@@ -143,26 +130,6 @@ body{
     color:white;
     font-size:20px;
 }
-
-/* ================= DESKTOP VIEW ================= */
-@media (min-width: 992px){
-
-    .menu-btn{
-        display:none;
-    }
-
-    .desktop-nav{
-        display:flex;
-    }
-
-    .side-menu{
-        display:none;
-    }
-
-    .header{
-        justify-content:space-between;
-    }
-}
 </style>
 </head>
 <body>
@@ -170,82 +137,11 @@ body{
 <!-- HEADER -->
 <div class="header">
     <div class="logo">ABRSM</div>
-
-    <!-- Desktop Horizontal Menu -->
-    <div class="desktop-nav">
-        <a href="#">LOGIN</a>
-        <a href="#">REGISTER</a>
-        <a href="#">HELP</a>
-        <a href="#">SELECT LANGUAGE</a>
-        <a href="#">DASHBOARD</a>
-        <a href="#">PUBLIC VENUE</a>
-        <a href="#">PRIVATE VISIT</a>
-        <a href="#">SUBMIT FILES</a>
-    </div>
-
-    <!-- Mobile Hamburger -->
     <div class="menu-btn" onclick="toggleMenu()">
         <i class="fa-solid fa-bars"></i>
     </div>
 </div>
 
-<!-- MOBILE SIDE MENU -->
+<!-- SIDE MENU -->
 <div class="side-menu" id="menu">
-    <div class="nav-item"><i class="fa-solid fa-right-to-bracket"></i> LOGIN</div>
-    <div class="nav-item"><i class="fa-solid fa-user-plus"></i> REGISTER</div>
-    <div class="nav-item"><i class="fa-solid fa-circle-question"></i> HELP</div>
-    <div class="nav-item"><i class="fa-solid fa-globe"></i> SELECT LANGUAGE</div>
-    <div class="nav-item"><i class="fa-solid fa-table-columns"></i> DASHBOARD</div>
-    <div class="nav-item"><i class="fa-solid fa-calendar-days"></i> PUBLIC VENUE</div>
-    <div class="nav-item"><i class="fa-solid fa-lock"></i> PRIVATE VISIT</div>
-    <div class="nav-item"><i class="fa-solid fa-upload"></i> SUBMIT FILES</div>
-</div>
-
-<!-- CONTENT -->
-<div class="content">
-    <h1>Certificate validation</h1>
-    <p>This is a validation of a certificate issued by ABRSM.</p>
-
-    <div class="certificate">
-        <h2>Certificate</h2>
-
-        <div class="details">
-            <div class="label">First name:</div>
-            <div>Antony</div>
-
-            <div class="label">Last name:</div>
-            <div>Njeru</div>
-
-            <div class="label">Contact ID:</div>
-            <div>035VK812</div>
-
-            <div class="label">Exam type:</div>
-            <div>Theory Exams</div>
-
-            <div class="label">Instrument:</div>
-            <div>Music Theory</div>
-
-            <div class="label">Grade:</div>
-            <div>5</div>
-
-            <div class="label">Year:</div>
-            <div>2025</div>
-
-            <div class="label">Result:</div>
-            <div><strong>73/75 Distinction</strong></div>
-        </div>
-    </div>
-</div>
-
-<div class="chat-btn">
-    <i class="fa-solid fa-comment"></i>
-</div>
-
-<script>
-function toggleMenu(){
-    document.getElementById("menu").classList.toggle("active");
-}
-</script>
-
-</body>
-</html>
+    <div class="nav-item"><i class="fa-solid fa-right-to-bracket
