@@ -1,145 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Certificate Validation Portal</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABRSM Certificate Validation</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+/* HEADER */
+.header{
+    background:black;
+    color:white;
+    padding:30px 0 10px 60px;
+}
 
-        body {
-            display: flex;
-            background-color: #f5f5f5;
-        }
+.logo{
+    font-size:40px;
+    font-weight:bold;
+    color:#ff2b5c; /* Pink logo kept */
+}
 
-        /* Sidebar */
-        .sidebar {
-            width: 260px;
-            height: 100vh;
-            background-color: #111;
-            color: white;
-            padding: 20px;
-        }
+/* NAV SECTION */
+.nav-section{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:40px 0;
+}
 
-        .logo {
-            color: #c40000;
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
+.nav-item{
+    margin:25px 0;
+    font-size:22px;
+    letter-spacing:1px;
+    cursor:pointer;
+    position:relative;
+    display:inline-block;
+    color:white;
+}
 
-        .menu-item {
-            padding: 12px 0;
-            cursor: pointer;
-            color: #ddd;
-        }
+.nav-item span{
+    margin-left:10px;
+}
 
-        .menu-item:hover {
-            color: white;
-        }
+/* Black & White Icons */
+.icon{
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+    fill:white;
+}
 
-        /* Main Content */
-        .main {
-            flex: 1;
-            padding: 40px;
-        }
+/* Dropdown */
+.dropdown-content{
+    display:none;
+    padding:10px 0;
+    margin-top:10px;
+}
 
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            max-width: 600px;
-        }
+.dropdown-content div{
+    padding:8px 20px;
+    font-size:18px;
+    color:white;
+}
 
-        .card h2 {
-            margin-bottom: 10px;
-        }
+.nav-item:hover .dropdown-content{
+    display:block;
+}
 
-        .card p {
-            margin-bottom: 20px;
-            color: #555;
-        }
+/* CONTENT */
+.content{
+    background:#eaeaea;
+    padding:40px 60px;
+}
 
-        .certificate-details {
-            margin-top: 20px;
-        }
+h1{
+    font-weight:normal;
+}
 
-        .certificate-details div {
-            margin-bottom: 10px;
-        }
+.certificate{
+    background:white;
+    padding:40px;
+    margin-top:30px;
+}
 
-        /* Floating Chat Button */
-        .chat-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: black;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 22px;
-            cursor: pointer;
-        }
+.details{
+    display:grid;
+    grid-template-columns:220px auto;
+    row-gap:15px;
+    margin-top:30px;
+}
 
-        @media (max-width: 768px) {
-            .sidebar {
-                display: none;
-            }
-        }
-    </style>
+.label{
+    color:#555;
+}
+
+.chat-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    background:black;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:24px;
+}
+
+</style>
 </head>
 <body>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="logo">ABRSM</div>
-        <div class="menu-item">Login</div>
-        <div class="menu-item">Register</div>
-        <div class="menu-item">Help</div>
-        <div class="menu-item">Select Language</div>
-        <div class="menu-item">Dashboard</div>
-        <div class="menu-item">Public Venue & Digital Exams</div>
-        <div class="menu-item">Private Visit</div>
-        <div class="menu-item">Submit Files</div>
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">ABRSM</div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-section">
+
+    <div class="nav-item">
+        <!-- Key Icon -->
+        <svg class="icon" viewBox="0 0 24 24">
+            <path d="M7 14a5 5 0 1 1 4.9-6H22v4h-2v2h-2v2h-4.1A5 5 0 0 1 7 14z"/>
+        </svg>
+        <span>LOGIN</span>
     </div>
 
-    <!-- Main Content -->
-    <div class="main">
-        <div class="card">
-            <h2>Certificate validation</h2>
-            <p>This is a validation of a certificate issued by ABRSM.</p>
+    <div class="nav-item">
+        <!-- User Plus Icon -->
+        <svg class="icon" viewBox="0 0 24 24">
+            <path d="M15 14c2.7 0 5 1.3 5 3v2H10v-2c0-1.7 2.3-3 5-3zM15 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 10v3H1v2h3v3h2v-3h3v-2H6v-3z"/>
+        </svg>
+        <span>REGISTER</span>
+    </div>
 
-            <h3>Certificate</h3>
-
-            <div class="certificate-details">
-                <div><strong>First name:</strong> JOY WANJIRU</div>
-                <div><strong>Last name:</strong> KAMAU</div>
-                <div><strong>Contact ID:</strong> 035VK711</div>
-                <div><strong>Exam type:</strong> Theory Exams</div>
-                <div><strong>Instrument:</strong> Music Theory</div>
-                <div><strong>Grade:</strong> 5</div>
-                <div><strong>Year:</strong> 2025</div>
-                <div><strong>Result:</strong> 73/75 Distinction</div>
-            </div>
+    <div class="nav-item">
+        <!-- Help Icon -->
+        <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 14v2h0v-2zm0-10a4 4 0 0 1 4 4c0 2-2 3-2 3h-2s2-1 2-3a2 2 0 0 0-4 0H8a4 4 0 0 1 4-4z"/>
+        </svg>
+        <span>HELP ▼</span>
+        <div class="dropdown-content">
+            <div>FAQ</div>
+            <div>Contact Support</div>
         </div>
     </div>
 
-    <!-- Chat Button -->
-    <div class="chat-button">💬</div>
+    <div class="nav-item">
+        <!-- Globe Icon -->
+        <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2c-1.7 0-3.3.7-4.5 1.8h9A8 8 0 0 0 12 4zm-6 8c0 1.3.3 2.5.9 3.5h10.2A8 8 0 0 0 18 12H6zm6 8c1.7 0 3.3-.7 4.5-1.8h-9A8 8 0 0 0 12 20z"/>
+        </svg>
+        <span>SELECT LANGUAGE ▼</span>
+        <div class="dropdown-content">
+            <div>English</div>
+            <div>French</div>
+            <div>Spanish</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+    <h1>Certificate validation</h1>
+    <p>This is a validation of a certificate issued by ABRSM.</p>
+
+    <div class="certificate">
+        <h2>Certificate</h2>
+
+        <div class="details">
+            <div class="label">First name:</div>
+            <div>JOY WANJIRU</div>
+
+            <div class="label">Last name:</div>
+            <div>KAMAU</div>
+
+            <div class="label">Contact ID:</div>
+            <div>035VK711</div>
+
+            <div class="label">Exam type:</div>
+            <div>Theory Exams</div>
+
+            <div class="label">Instrument (Exam Entry):</div>
+            <div>Music Theory</div>
+        </div>
+    </div>
+</div>
+
+<div class="chat-btn">💬</div>
 
 </body>
 </html>
