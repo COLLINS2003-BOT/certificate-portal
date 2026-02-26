@@ -5,56 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ABRSM Certificate Validation</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <style>
 body{
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
-    background:#111;
 }
 
 /* HEADER */
 .header{
-    background:#111;
+    background:black;
     color:white;
-    padding:18px 20px;
+    padding:20px;
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
 .logo{
-    font-size:26px;
+    font-size:28px;
     font-weight:bold;
-    color:#e10600;
-    letter-spacing:1px;
+    color:#ff2b5c;
 }
 
-.menu-btn{
-    font-size:22px;
+.menu-icon{
+    font-size:26px;
     cursor:pointer;
-    border:1px solid #777;
-    padding:6px 10px;
-    border-radius:6px;
+    display:none; /* Hide menu icon on large screens */
 }
 
-/* SIDE MENU */
-.side-menu{
-    position:fixed;
-    top:0;
-    right:-100%;
-    width:100%;
-    height:100%;
-    background:#111;
-    color:#ccc;
-    transition:0.4s;
-    padding-top:80px;
-    z-index:1000;
-}
-
-.side-menu.active{
-    right:0;
+/* NAVIGATION */
+.nav-section{
+    background:black;
+    color:white;
+    padding:10px 0 25px 0;
+    display:flex;
+    flex-direction: column; /* Default vertical layout for mobile */
 }
 
 .nav-item{
@@ -62,73 +47,84 @@ body{
     font-size:15px;
     display:flex;
     align-items:center;
-    gap:12px;
-    border-bottom:1px solid #1d1d1d;
+    gap:10px;
+    cursor:pointer;
 }
 
-.nav-item i{
-    color:#999;
+.nav-item:hover{
+    background:#111;
+}
+
+.nav-item small{
+    margin-left:auto;
 }
 
 /* CONTENT */
 .content{
     background:#efefef;
-    padding:25px 18px;
-    border-top-left-radius:20px;
-    border-top-right-radius:20px;
+    padding:30px 20px;
 }
 
-.content h1{
-    font-size:22px;
+h1{
     font-weight:normal;
-    color:#333;
+    margin-bottom:5px;
 }
 
-.content p{
-    font-size:14px;
-    color:#666;
+.subtitle{
+    color:#555;
 }
 
-/* CERTIFICATE CARD */
 .certificate{
     background:white;
-    padding:20px;
+    padding:25px;
     margin-top:20px;
-    border-radius:15px;
-}
-
-.certificate h2{
-    font-weight:normal;
-    color:#444;
+    border-radius:6px;
 }
 
 .details{
+    display:grid;
+    grid-template-columns:190px auto;
+    row-gap:12px;
     margin-top:20px;
-    font-size:14px;
-}
-
-.details div{
-    margin-bottom:10px;
 }
 
 .label{
     color:#777;
 }
 
-/* CHAT BUTTON */
+/* Chat Button */
 .chat-btn{
     position:fixed;
-    bottom:25px;
-    right:25px;
+    bottom:20px;
+    right:20px;
     width:55px;
     height:55px;
-    background:#222;
+    background:black;
     border-radius:50%;
     display:flex;
     justify-content:center;
     align-items:center;
     color:white;
-    font-size:20px;
+    font-size:22px;
+}
+
+/* Responsive layout: horizontal menu for screens wider than 768px */
+@media (min-width: 768px){
+    .nav-section{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .nav-item{
+        padding:14px 20px;
+        border-right: 1px solid #333;
+    }
+    .nav-item:last-child{
+        border-right: none;
+    }
+    .menu-icon{
+        display:none; /* Hide hamburger menu on large screens */
+    }
 }
 </style>
 </head>
@@ -137,11 +133,58 @@ body{
 <!-- HEADER -->
 <div class="header">
     <div class="logo">ABRSM</div>
-    <div class="menu-btn" onclick="toggleMenu()">
-        <i class="fa-solid fa-bars"></i>
+    <div class="menu-icon">☰</div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav-section">
+    <div class="nav-item">🔑 LOGIN</div>
+    <div class="nav-item">👤 REGISTER</div>
+    <div class="nav-item">❓ HELP ▼</div>
+    <div class="nav-item">🌍 SELECT LANGUAGE ▼</div>
+    <div class="nav-item">📋 DASHBOARD</div>
+    <div class="nav-item">📅 PUBLIC VENUE & DIGITAL EXAMS</div>
+    <div class="nav-item">🔒 PRIVATE VISIT</div>
+    <div class="nav-item">⬆️ SUBMIT FILES</div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+    <h1>Certificate validation</h1>
+    <p class="subtitle">This is a validation of a certificate issued by ABRSM.</p>
+
+    <div class="certificate">
+        <h2>Certificate</h2>
+
+        <div class="details">
+            <div class="label">First name:</div>
+            <div>ANTONY</div>
+
+            <div class="label">Last name:</div>
+            <div>NJERU</div>
+
+            <div class="label">Contact ID:</div>
+            <div>035VK812</div>
+
+            <div class="label">Exam type:</div>
+            <div>Theory Exams</div>
+
+            <div class="label">Instrument (Exam Entry):</div>
+            <div>Music Theory</div>
+            
+            <div class="label">Grade (Exam Entry):</div>
+            <div>5</div>
+
+            <div class="label">Year exam was taken (Exam Entry):</div>
+            <div>2025</div>
+
+            <div class="label">Result Category (Exam Result):</div>
+            <div><strong>73/75 Distinction</strong></div>
+        </div>
     </div>
 </div>
 
-<!-- SIDE MENU -->
-<div class="side-menu" id="menu">
-    <div class="nav-item"><i class="fa-solid fa-right-to-bracket
+<div class="chat-btn">💬</div>
+
+</body>
+</html>
